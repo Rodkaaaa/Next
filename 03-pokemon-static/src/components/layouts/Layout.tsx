@@ -1,25 +1,28 @@
+import {Navbar} from '../ui'
 import Head from "next/head"
-import {  FC } from "react"
-
 
 type Props = {
     children: JSX.Element,
+    titulo: string
 }
 
-const Layout = ({children}:Props) => {
-  return (
-    <>
-        <Head>
-            <title>
-                <meta name="author" content="Frederick Cid"/>
-                <meta name="description" content="Informacion sobre el pokemon xxxxxx"/>
-                <meta name="keywords" content="xxxxx, pokemon, pokedex"/>
-            </title>
-        </Head>
-        {/* Navbar */}
-        <main>
-            {children}
-        </main>
-    </>
-  )
+const Layout = ({ children, titulo }: Props) => {
+    return (
+        <>
+            <Head>
+                <title>{titulo}</title>
+                <meta name="author" content="Frederick Cid" />
+                <meta name="description" content={`Información sobre el pokemon xxxxxx ${ titulo }`} />
+                <meta name="keywords" content={`${titulo}, pokemon, pokedex `} />
+            </Head>
+
+             <Navbar/>
+
+            <main>
+                {children}
+            </main>
+        </>
+    )
 }
+
+export default Layout;
