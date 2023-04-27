@@ -19,7 +19,7 @@ const Favoritos = (props: Props) => {
     return (
         <Layout titulo='Pokemon - Favoritos'>
             {
-                favoritePokemons.length === 0
+                favoritePokemons.length  === 0 
                     ? (<NoFavorite />)
                     : (
                         <Grid.Container gap={2} direction='row' justify='flex-start'>
@@ -27,7 +27,7 @@ const Favoritos = (props: Props) => {
                                 favoritePokemons.map(id => (
                                     <Grid xs={6} sm={3} md={2} xl={1} key={id}>
                                         <Card isHoverable  >
-                                            
+
                                         </Card>
                                     </Grid>
                                 ))

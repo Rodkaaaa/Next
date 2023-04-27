@@ -1,3 +1,4 @@
+import { Navbar } from './Navbar';
+import { NoFavorite } from './NoFavorite';
 
-export * from './Navbar';
-export * from './NoFavorite';
+export {Navbar, NoFavorite}

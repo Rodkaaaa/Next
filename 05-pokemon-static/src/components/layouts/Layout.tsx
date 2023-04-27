@@ -1,8 +1,8 @@
-import {Navbar} from '../ui'
+import { Navbar } from '../ui'
 import Head from "next/head"
 
 type Props = {
-    children: JSX.Element,
+    children?: JSX.Element | JSX.Element[],
     titulo: string
 }
 
@@ -12,11 +12,11 @@ const Layout = ({ children, titulo }: Props) => {
             <Head>
                 <title>{titulo}</title>
                 <meta name="author" content="Frederick Cid" />
-                <meta name="description" content={`Información sobre el pokemon xxxxxx ${ titulo }`} />
+                <meta name="description" content={`Información sobre el pokemon xxxxxx ${titulo}`} />
                 <meta name="keywords" content={`${titulo}, pokemon, pokedex `} />
             </Head>
 
-             <Navbar/>
+            <Navbar />
 
             <main>
                 {children}
@@ -25,4 +25,4 @@ const Layout = ({ children, titulo }: Props) => {
     )
 }
 
-export default Layout;
+export { Layout };

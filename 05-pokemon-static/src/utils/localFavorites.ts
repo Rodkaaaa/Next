@@ -34,6 +34,7 @@ const pokemons = (): number[] => {
   return JSON.parse(localStorage.getItem("favorites") || "[]");
 };
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   toggleFavorite,
   existInFavorites,
