@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google';
 import { Layout } from '@/components/layouts';
 import { Card, CardContent, CardHeader, Grid, Typography } from '@mui/material';
+import { EntryList } from '@/components/ui';
 
 
 const inter = Inter({ subsets: ['latin', 'cyrillic', 'greek'] })
@@ -16,7 +17,7 @@ function HomePage() {
             <CardHeader title="Pendientes" />
             <CardContent>
               {/* agregar nueva entrada */}
-              {/* listado de las entradas */}
+              <EntryList/>
             </CardContent>
           </Card>
         </Grid>
