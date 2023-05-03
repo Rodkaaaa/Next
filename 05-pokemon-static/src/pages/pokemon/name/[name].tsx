@@ -146,7 +146,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         return {
             redirect: {
                 destination: '/',
-                permanent: true,
+                permanent: false,
             }
         }
     }
