@@ -12,7 +12,7 @@ function HomePage() {
       <Grid container spacing={2}>
 
         <Grid item xs={12} sm={4} >
-          <Card sx={{height: 'calc(100vh - 100'}}>
+          <Card sx={{height: 'calc(100vh - 100px)'}}>
             <CardHeader title="Pendientes" />
             <CardContent>
               {/* agregar nueva entrada */}
@@ -22,13 +22,13 @@ function HomePage() {
         </Grid>
 
         <Grid item xs={12} sm={4} >
-          <Card>
+          <Card sx={{height: 'calc(100vh - 100px)'}}>
             <CardHeader title="En Progreso" />
           </Card>
         </Grid>
 
         <Grid item xs={12} sm={4} >
-          <Card>
+          <Card sx={{height: 'calc(100vh - 100px)'}}>
             <CardHeader title="Completadas" />
           </Card>
         </Grid>
