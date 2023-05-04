@@ -1,9 +1,13 @@
-import { Card, CardActionArea, CardActions, CardContent, Typography } from '@mui/material';
 import React from 'react'
+import { Entry } from '@/interfaces';
+import { Card, CardActionArea, CardActions, CardContent, Typography } from '@mui/material';
+import { format } from 'date-fns'
 
-type Props = {}
+interface Props {
+    entry:Entry
+}
 
-export const EntryCard = (props: Props) => {
+export const EntryCard = ({entry}: Props) => {
   return (
     <Card sx={{margin: 1}}
     //eventos de drag
@@ -11,11 +15,11 @@ export const EntryCard = (props: Props) => {
         <CardActionArea>
             <CardContent>
                 <Typography sx={{whiteSpace: 'pre-line'}}>
-                    Esto es la descripcion
+                    {entry.description}
                 </Typography>
             </CardContent>
             <CardActions sx={{display: 'flex', justifyContent: 'end', paddingRight: '2' }}>
-                <Typography variant='body2'>hace 30 min</Typography>
+                <Typography variant='body2'>Crea    do a las: {format(entry.createAt,'HH:MM:SS')}</Typography>
             </CardActions>
         </CardActionArea>
     </Card>

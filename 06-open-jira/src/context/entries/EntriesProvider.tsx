@@ -12,28 +12,84 @@ const ENTRIES_INITIAL_STATE: EntriesState = {
     {
       _id: uuidv4(),
       description:
-        "Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
+        "Pendiente: Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
       createAt: Date.now(),
       status: "pending",
     },
     {
       _id: uuidv4(),
       description:
-        "Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
+        "Pendiente: Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
+      createAt: Date.now(),
+      status: "pending",
+    },
+    {
+      _id: uuidv4(),
+      description:
+        "Pendiente: Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
+      createAt: Date.now(),
+      status: "pending",
+    },
+    {
+      _id: uuidv4(),
+      description:
+        "En progreso: Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
       createAt: Date.now() - 100000,
       status: "in-progress",
     },
     {
       _id: uuidv4(),
       description:
-        "Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
+        "En progreso: Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
+      createAt: Date.now() - 100000,
+      status: "in-progress",
+    },
+    {
+      _id: uuidv4(),
+      description:
+        "En progreso: Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
+      createAt: Date.now() - 100000,
+      status: "in-progress",
+    },
+    {
+      _id: uuidv4(),
+      description:
+        "En progreso: Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
+      createAt: Date.now() - 100000,
+      status: "in-progress",
+    },
+    {
+      _id: uuidv4(),
+      description:
+        "Finalizado: Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
       createAt: Date.now() - 10000,
       status: "finished",
     },
     {
       _id: uuidv4(),
       description:
-        "Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
+        "Finalizado: Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
+      createAt: Date.now() - 10000,
+      status: "finished",
+    },
+    {
+      _id: uuidv4(),
+      description:
+        "Finalizado: Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
+      createAt: Date.now() - 10000,
+      status: "finished",
+    },
+    {
+      _id: uuidv4(),
+      description:
+        "Finalizado: Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
+      createAt: Date.now() - 10000,
+      status: "finished",
+    },
+    {
+      _id: uuidv4(),
+      description:
+        "Pendiente: Commodo exercitation officia est consectetur deserunt anim fugiat nulla anim nisi cupidatat.",
       createAt: Date.now() - 10000000,
       status: "pending",
     },

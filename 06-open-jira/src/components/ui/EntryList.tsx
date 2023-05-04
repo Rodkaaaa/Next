@@ -1,16 +1,34 @@
 import { List, Paper } from '@mui/material'
-import React from 'react'
+import React, { useContext, useMemo } from 'react'
 import { EntryCard } from './'
+import { EntryStatus } from '@/interfaces'
+import { EntriesContext } from '@/context/entries'
+interface Props  {
+  status: EntryStatus
+}
 
-type Props = {}
+export const EntryList = ({status}: Props) => {
+  
+  const {entries} = useContext(EntriesContext)
 
-export const EntryList = (props: Props) => {
+  const entriesByStatus = useMemo(() => entries.filter(entry => entry.status === status) , [entries])
+
+ /*  const entriesByStatus = entries.filter(entry => entry.status === status) */
+
   return (
     <div>
-        <Paper sx={{ height: 'calc(100vh - 250px)', overflow: 'scroll', backgroundColor: 'transparent', padding: '3px 5px'}}>
+        <Paper sx={{ height: 'calc(100vh - 180px)', overflow: 'auto', backgroundColor: 'transparent', padding: '3px 5px'}}>
             {/* todo: cambiará dependiendo si esta haciendo drag o no*/}
             <List sx={{ opacity: 1}}>
-                <EntryCard/>
+                {
+                  entriesByStatus.map(entry =>(
+                    <EntryCard key={entry._id} entry={entry}/>
+                  ))
+
+                }
+                
+                
+       
             </List>
         </Paper>
     </div>

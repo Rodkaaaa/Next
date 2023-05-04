@@ -10,27 +10,27 @@ function HomePage() {
   return (
     <Layout title='Home - OpenJira'>
 
-      <Grid container spacing={2}>
+      <Grid container spacing={3}>
 
         <Grid item xs={12} sm={4} >
           <Card sx={{height: 'calc(100vh - 100px)'}}>
-            <CardHeader title="Pendientes" />
-            <CardContent>
+            <CardHeader title="Pendientes" sx={{textAlign: 'center'}}/>
               {/* agregar nueva entrada */}
-              <EntryList/>
-            </CardContent>
+              <EntryList status='pending'/>
           </Card>
         </Grid>
 
         <Grid item xs={12} sm={4} >
           <Card sx={{height: 'calc(100vh - 100px)'}}>
-            <CardHeader title="En Progreso" />
+            <CardHeader title="En Progreso" sx={{textAlign: 'center'}}/>
+            <EntryList status='in-progress'/>
           </Card>
         </Grid>
 
         <Grid item xs={12} sm={4} >
           <Card sx={{height: 'calc(100vh - 100px)'}}>
-            <CardHeader title="Completadas" />
+            <CardHeader title="Completadas" sx={{textAlign: 'center'}}/>
+            <EntryList status='finished'/>
           </Card>
         </Grid>
 
