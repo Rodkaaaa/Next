@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google';
 import { Layout } from '@/components/layouts';
 import { Card, CardContent, CardHeader, Grid, Typography } from '@mui/material';
-import { EntryList } from '@/components/ui';
+import { EntryList, NewEntry } from '@/components/ui';
 
 
 const inter = Inter({ subsets: ['latin', 'cyrillic', 'greek'] })
@@ -16,7 +16,9 @@ function HomePage() {
           <Card sx={{height: 'calc(100vh - 100px)'}}>
             <CardHeader title="Pendientes" sx={{textAlign: 'center'}}/>
               {/* agregar nueva entrada */}
+              <NewEntry/>
               <EntryList status='pending'/>
+              
           </Card>
         </Grid>
 
