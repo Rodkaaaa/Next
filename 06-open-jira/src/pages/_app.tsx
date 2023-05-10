@@ -6,9 +6,12 @@ import { UIProvider } from '../context/ui';
 import { EntriesProvider } from '../context/entries';
 
 import { lightTheme, darkTheme } from '../themes';
+interface Props{
+  pageProps: AppProps;
+  Component: any
+}
 
-
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: Props) {
   return (
     <EntriesProvider>
       <UIProvider>
