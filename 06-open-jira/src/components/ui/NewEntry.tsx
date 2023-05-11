@@ -3,6 +3,7 @@ import React, { ChangeEvent, useContext, useState } from "react";
 import SaveAltSharpIcon from "@mui/icons-material/SaveAltSharp";
 import AddBoxSharpIcon from "@mui/icons-material/AddBoxSharp";
 import { UIContext } from '../../context/ui/UIContext';
+import { EntriesContext } from "@/context/entries";
 
 type Props = {};
 
@@ -11,16 +12,19 @@ export const NewEntry = (props: Props) => {
   const [inputValue, setInputValue] = useState("");
   const [touch, setTouch] = useState(false);
   const {isAddingEntry, setIsAddingEntry} = useContext(UIContext)
-
+  const {addNewEntry } = useContext(EntriesContext)
   const onTextFieldChanges = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
 const onSave = () => {
   if(inputValue.length===0) return;
+  
+  addNewEntry(inputValue)
   setIsAddingEntry(false)
   setTouch(false)
   setInputValue('')
+  
 }
 
 
