@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { disconnect } from "process";
+
 
 /**  
 * 0 = disconected
@@ -12,7 +12,7 @@ const mongooConnection = {
     isConnected:0
 }
 
-export const connect = async () => {
+export const connectDb = async () => {
     if( mongooConnection.isConnected ){
         console.log("ya estamos conectados")
         return;
@@ -29,9 +29,9 @@ export const connect = async () => {
 
     }
 
-    await mongoose.connect('....');
+    await mongoose.connect( process.env.MONGO_URL  || '');
     mongooConnection.isConnected = 1;
-    console.log('conectado a MongoDB', '.....')
+    console.log('conectado a MongoDB', process.env.MONGO_URL)
 }
 
 export const disconnectDb = async() => {

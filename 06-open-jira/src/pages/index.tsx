@@ -2,14 +2,17 @@ import { Inter } from 'next/font/google';
 import { Layout } from '@/components/layouts';
 import { Card, CardContent, CardHeader, Grid, Typography } from '@mui/material';
 import { EntryList, NewEntry } from '@/components/ui';
+import { url } from 'inspector';
 
 
 const inter = Inter({ subsets: ['latin', 'cyrillic', 'greek'] })
 
 function HomePage() {
+
+
   return (
     <Layout title='Home - OpenJira'>
-
+      
       <Grid container spacing={3}>
 
         <Grid item xs={12} sm={4} >
@@ -37,7 +40,6 @@ function HomePage() {
         </Grid>
 
       </Grid>
-
     </Layout>
   )
 }
