@@ -1,4 +1,7 @@
 import { db, disconnectDb } from "@/database";
+import { seedData } from "@/database/seed-data";
+import { Entry } from "@/models";
+import EntryModel from "@/models/Entry";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
@@ -12,7 +15,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   
     }
     await db();
-  
+    await Entry.deleteMany();
+    await Entry.insertMany(seedData.entries)
     await disconnectDb();
  
 

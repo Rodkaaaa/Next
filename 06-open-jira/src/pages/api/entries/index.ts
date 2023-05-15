@@ -1,0 +1,28 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
+import { connectDb, disconnectDb } from '../../../database/db';
+import { db } from '@/database';
+import { Entry, IEntry } from '@/models';
+
+type Data = 
+|{ message: string }
+| IEntry[]
+| IEntry
+
+export default function handler (req: NextApiRequest, res: NextApiResponse<Data>) {
+
+    switch (req.method) {
+        case 'GET':
+            return getEntries( res )
+        default:
+            return res.status(400).json({ message: 'Endpoint no existe' });
+    }
+}
+
+const getEntries =async (res:NextApiResponse<Data>) => {
+        
+    await db();
+    const entries = await Entry.find().sort({createAt: 'ascending'});
+    await disconnectDb();
+
+    res.status(200).json(entries)
+}

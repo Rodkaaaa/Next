@@ -1,3 +1,3 @@
 import { connectDb as db, disconnectDb} from "./db";
-
-export {db, disconnectDb};
+import { seedData } from "./seed-data";
+export {db, disconnectDb, seedData};
