@@ -21,3 +21,7 @@ Renombrar el archivo __.env.template__ a __.env__
 ```
 http://localhost:3000//api/seed
 ```
+
+```
+yarn upgrade-interactive --latest
+```
