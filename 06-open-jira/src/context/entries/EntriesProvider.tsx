@@ -1,11 +1,8 @@
 import { useEffect, useReducer } from "react";
-import { v4 as uuidv4 } from "uuid";
-
+import { useSnackbar } from "notistack";
 import { Entry } from "../../interfaces";
-
 import { EntriesContext, EntriesReducer } from "./";
 import { entriesApi } from "@/apis";
-import { data } from "autoprefixer";
 
 export interface EntriesState {
   entries: Entry[];
@@ -20,20 +17,36 @@ type Props = {
 
 export const EntriesProvider = ({ children }: Props) => {
   const [state, dispatch] = useReducer(EntriesReducer, Entries_INITIAL_STATE);
+  const { enqueueSnackbar } = useSnackbar();
 
   const addNewEntry = async (description: string) => {
     const { data } = await entriesApi.post<Entry>("/entries", { description });
 
     dispatch({ type: "[Entry] Add-Entry", payload: data });
-  };
+  }; 
 
-  const updateEntry = async ({ _id, description, status }: Entry) => {
+  const updateEntry = async (
+    { _id, description, status }: Entry,
+    showSnackbar = false
+  ) => {
     try {
       const { data } = await entriesApi.put<Entry>(`/entries/${_id}`, {
         description: description,
         status: status,
       });
-      dispatch({ type: "[Entry] Entry-Updated", payload: data });
+      dispatch({ type: "[Entry] Entry-Updated", payload: data , showSnackbar});
+
+      //TODO: mostrar SnackBar
+      if (showSnackbar) {
+        enqueueSnackbar("Entrada Actualizada", {
+          variant: "success",
+          autoHideDuration: 1500,
+          anchorOrigin: {
+            vertical: "top",
+            horizontal: "right",
+          },
+        });
+      }
     } catch (error) {
       console.log({ error });
     }
@@ -56,6 +69,7 @@ export const EntriesProvider = ({ children }: Props) => {
         // Methods
         addNewEntry,
         updateEntry,
+    
       }}
     >
       {children}

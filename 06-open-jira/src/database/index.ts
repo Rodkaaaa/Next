@@ -1,3 +1,4 @@
-import { connectDb as db, disconnectDb} from "./db";
+import { connectDb as db, disconnectDb } from "./db";
 import { seedData } from "./seed-data";
-export {db, disconnectDb, seedData};
+import { getEntryById } from "./dbEntries";
+export { db, disconnectDb, seedData, getEntryById };

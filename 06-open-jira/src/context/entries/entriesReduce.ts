@@ -3,8 +3,9 @@ import { EntriesState } from "./";
 
 type EntriesActionType =
   | { type: "[Entry] Add-Entry"; payload: Entry }
-  | { type: "[Entry] Entry-Updated"; payload: Entry }
-  | { type: "[Entry] Refresh-Data"; payload: Entry[] };
+  | { type: "[Entry] Entry-Updated"; payload: Entry; showSnackbar: boolean }
+  | { type: "[Entry] Refresh-Data"; payload: Entry[] }
+  | { type: "[Entry] Delete-Data"; payload: Entry };
 
 export const EntriesReducer = (
   state: EntriesState,
@@ -29,11 +30,13 @@ export const EntriesReducer = (
         }),
       };
 
-      case "[Entry] Refresh-Data":
-        return{
-          ...state,
-          entries: [...action.payload]
-        }
+    case "[Entry] Refresh-Data":
+      return {
+        ...state,
+        entries: [...action.payload],
+      };
+
+   
 
     default:
       return state;
