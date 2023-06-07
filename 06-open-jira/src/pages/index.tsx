@@ -5,7 +5,7 @@ import { EntryList, NewEntry } from '@/components/ui';
 import { url } from 'inspector';
 
 
-const inter = Inter({ subsets: ['latin', 'cyrillic', 'greek'] })
+
 
 function HomePage() {
 
