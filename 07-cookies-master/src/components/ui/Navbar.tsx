@@ -13,7 +13,7 @@ export const Navbar = () => {
         </IconButton>
 
         <NextLink href={"/"} passHref legacyBehavior>
-          <Link>
+          <Link sx={{textDecoration:'none'}}>
             <Typography variant="h6" color={"white"}>
               CookieMaster
             </Typography>
@@ -23,7 +23,7 @@ export const Navbar = () => {
         <div style={{flex:1}}/>
 
         <NextLink href={"/theme-changer"} passHref legacyBehavior>
-          <Link>
+          <Link sx={{textDecoration:'none'}}>
             <Typography variant="h6" color={"white"}>
               Cambiar Tema
             </Typography>
